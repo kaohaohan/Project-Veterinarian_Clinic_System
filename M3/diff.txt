@@ -1,0 +1,14 @@
+In line number 545 of your output:
+The output should be:
+2024-02-29 12:30 01128 Bug Tevlin      (___)___-____ (TBD)
+              ^
+But your output is: 
+2024-02-29 12:00 01112 Archie Ashness  (692)256-5724 (HOME)
+              ^
+
+Unmatched character details:
+The character in column 15 is supposed to be:
+  [3] ASCII code(51)
+but you printed
+  [0] ASCII code(48)
+

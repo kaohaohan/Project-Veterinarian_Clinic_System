@@ -1,0 +1,64 @@
+/*/////////////////////////////////////////////////////////////////////////
+                        Assignment 1 - Milestone 3
+Full Name  : Hao Han Kao
+Student ID#: 151604220
+Email      : hkao@myseneca.ca
+Section    : NEE
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+/////////////////////////////////////////////////////////////////////////*/
+
+
+1. The are three functions which I create additionally:
+
+a. void sortAppointments(struct Appointment appointments[],int size )
+
+The function is going to arrange list of appointments based on their appointment dates.
+Initially, I combined all the logic in the viewAllAppointments function but it is getting hard to read.
+I created the `sortAppointments` function to isolate the sorting functionality and promote code reusability. 
+Reconginzing the importance of adhering to the principle of assigning a singular responsibility to each function.
+, I made the deliberate choice to extract the sorting login into its own distinct functio. Seperating the sorting logic
+helps me to transparency and conciseness of the 'viewAllAppointments'. 
+Before calling the viewAllAppointments function, the 'sortAppointments' function is invoked to guarantee proper sorting of appointments, 
+contributing to a more efficient presentation within viewAllAppointments.
+
+
+
+b.swap(struct Appointment *appointmentsJ,struct Appointment *appointmentsJ1):
+
+This auxiliary function, swap, is crucial to the sorting process within the sortAppointments function, 
+employing the bubble sort algorithm. 
+The primary objective of the swap function is to interchange the positions of two struct Appointment elements, 
+referred to as elementX and elementY. 
+This operation is essential for arranging the appointments in ascending order based on their dates.
+
+
+c.void inputYearMonthDay(int* year, int* month, int* day):
+
+The function `inputYearMonthDay` encapsulates the logic for obtaining and validating user input for the year, month, and day. 
+Originally, this logic was duplicated in both the `addAppointments` and `removeAppointments` functions. 
+However, upon recognizing that both of these functions require user input for Year, Month, and Day, I decided to create a dedicated function to centralize this logic. 
+This separation not only reduces code duplication but also significantly enhances readability and maintainability. 
+Additionally, the function incorporates complex logic for validating days in a month, considering factors such as leap years for the month of February. This ensures that the user input is not only within the specified range for months (1-12) but also adheres to the correct number of days based on the selected month.
+The function prompts the user for the Year, Month (1-12), and then dynamically adjusts the range for the Day based on the selected month. 
+For instance, February has 28 or 29 days depending on whether it's a leap year, and other months have varying days between 28 and 31. This validation logic helps prevent invalid dates and ensures the integrity of the user input.
+
+2. The intentional reduction of scanf function calls in the client.c module of my code serves as a deliberate design strategy aimed at improving the user experience, optimizing code readability, and mitigating potential input-related errors. The scanf function, known for its susceptibility to errors, particularly when handling diverse data types and formats, can introduce complexities and compromise code robustness.
+
+By purposefully minimizing the usage of scanf, I simplify the user input process, fostering a more user-friendly interface and making the code more resistant to input-related issues. Utilizing only one or a few scanf calls consolidates user input, allowing for more straightforward management and validation. This streamlined approach enhances the overall user interaction by presenting a concise set of prompts, reducing user cognitive load.
+
+Moreover, the strategic reduction of scanf calls facilitates more effective implementation of input validation and error handling. With fewer input points, it becomes easier to enforce data conformity to expected criteria, ultimately improving the program's reliability.
+
+In summary, the deliberate minimization of scanf function calls in client.c reflects a thoughtful decision to prioritize user-friendliness, code maintainability, and robust error handling
+
+3.
+The inputYearMonthDay function was placed in the module for addAppointment and removeAppointment. This decision was made for several reasons. Firstly, the inputYearMonthDay function is necessary for adding or removing appointments, as it collects the user input for the date of the appointment. Placing it in the addAppointment and removeAppointment modules allows for easy access to this function when needed.
+
+Secondly, the inputYearMonthDay function is specific to the functionality of adding and removing appointments. It is not a general-purpose function that could be used in a variety of other modules. Placing it in the addAppointment and removeAppointment modules keeps the code organized and ensures that the function is only accessible to the specific parts of the program where it is needed.
+
+Additionally, placing the inputYearMonthDay function in the addAppointment and removeAppointment modules aligns with the principles of modular programming, which promotes breaking down a program into smaller, manageable modules. This makes the code easier to read, understand, and maintain.
+
+Overall, by placing the inputYearMonthDay function in the addAppointment and removeAppointment modules, the code is organized, specific to the functionality where it is needed, and follows the principles of modular programming.
